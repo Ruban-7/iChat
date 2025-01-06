@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-app-service
+spec:
+  selector:
+    app: chat-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4000
+      nodePort: 32000 # Custom port (optional, else Kubernetes assigns one)
+  type: NodePort
